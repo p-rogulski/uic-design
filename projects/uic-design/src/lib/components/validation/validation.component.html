@@ -1,0 +1,7 @@
+<div class="uic-errors">
+  <ng-container *ngFor="let key of errorKeys">
+    <div class="uic-error" *ngIf="hasValidationMessage(key)">
+      {{ getValidationMessage(key) }}
+    </div>
+  </ng-container>
+</div>

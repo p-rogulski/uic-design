@@ -1,0 +1,13 @@
+@use "common";
+
+:host {
+  font-weight: 300;
+  overflow: hidden;
+  color: common.color(grey);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.uic-border-bottom {
+  border-bottom: common.border-width(1) common.color(grey-500) solid;
+}

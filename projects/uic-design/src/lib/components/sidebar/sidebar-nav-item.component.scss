@@ -1,0 +1,42 @@
+@use "sass:selector";
+@use "sass:color";
+@use "common";
+
+.uic-sidebar-nav-item-content {
+  white-space: nowrap;
+  user-select: none;
+  margin-left: common.space(1);
+  margin-right: common.space(2);
+}
+
+.uic-sidebar-nav-item-icon {
+  display: flex;
+  justify-content: center;
+  min-width: common.space(3);
+  font-size: common.font-size(4);
+  padding: common.space(1);
+}
+
+:host {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  cursor: pointer;
+  font-size: common.font-size(3);
+  line-height: common.line-height(7);
+
+  &.uic-sidebar-nav-item-only-icon .uic-sidebar-nav-item-icon {
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.uic-sidebar-nav-item-active:not(.uic-sidebar-nav-item-only-icon),
+  &.uic-sidebar-nav-item-active.uic-sidebar-nav-item-only-icon .uic-sidebar-nav-item-icon {
+    opacity: 1;
+    border-radius: common.border-radius(2);
+    background-color: color.change(common.color(secondary), $alpha: 0.4);
+  }
+}

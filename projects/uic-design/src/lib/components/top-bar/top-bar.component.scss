@@ -1,0 +1,31 @@
+@use "common";
+
+$bg-colors: "primary", "secondary", "grey-200";
+
+:host {
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: common.space(2);
+  box-shadow: common.shadow(medium) common.color(grey-100);
+  background-color: common.color(light);
+
+  &.uic-top-bar-fixed {
+    position: fixed;
+    margin-bottom: common.space(4);
+    top: 0;
+    width: 100%;
+  }
+
+  &.uic-top-bar-sticky {
+    position: sticky; /* Safari */
+    top: 0;
+  }
+
+  @each $bgColor in $bg-colors {
+    &.uic-top-bar-#{$bgColor} {
+      background-color: common.color($bgColor);
+      color: common.bg-text-color($bgColor);
+    }
+  }
+}

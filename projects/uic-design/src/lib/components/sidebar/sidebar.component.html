@@ -1,0 +1,11 @@
+<div *ngIf="isExpandable" class="uic-sidebar-header">
+  <button uic-button-text class="uic-sidebar-toggle-button" (click)="changeSidebarState()">
+    <fa-icon class="uic-sidebar-toggle-icon" [icon]="toggleButtonIcon"></fa-icon>
+  </button>
+</div>
+
+<div class="uic-sidebar-animated-container" [@expandCollapse]="isExpanded || !isExpandable ? 'collapse' : 'expand'">
+  <div class="uic-sidebar-content">
+    <ng-content></ng-content>
+  </div>
+</div>

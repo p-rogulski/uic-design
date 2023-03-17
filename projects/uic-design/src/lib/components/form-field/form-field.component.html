@@ -1,0 +1,7 @@
+<uic-input-label *ngIf="label">{{ label }}</uic-input-label>
+<ng-content [uic-input]></ng-content>
+<uic-validation
+  *ngIf="control?.touched"
+  [errors]="control.errors"
+  [params]="params"
+></uic-validation>

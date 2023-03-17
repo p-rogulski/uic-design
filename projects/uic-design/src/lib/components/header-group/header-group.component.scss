@@ -1,0 +1,9 @@
+:host {
+  display: block;
+
+  ::ng-deep {
+    .uic-header:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}

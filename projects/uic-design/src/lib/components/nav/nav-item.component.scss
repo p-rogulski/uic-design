@@ -1,0 +1,34 @@
+@use "common";
+
+:host {
+  display: inline-block;
+  font-size: 0;
+  padding: common.space(1) common.space(2);
+  border-color: inherit;
+  cursor: default;
+}
+
+.uic-nav-item-icon {
+  font-size: common.font-size(3);
+  margin-right: common.space(2);
+}
+
+.uic-nav-item-title {
+  display: inline-block;
+  text-align: center;
+  font-size: common.font-size(3);
+
+  &:hover {
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  &::before {
+    display: block;
+    content: attr(title);
+    font-weight: 500;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}

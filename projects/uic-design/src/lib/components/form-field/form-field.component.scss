@@ -1,0 +1,10 @@
+@use "common";
+
+:host {
+  display: block;
+  margin-bottom: common.space(2);
+
+  ::ng-deep.uic-validation-error {
+    border-color: common.color(danger);
+  }
+}

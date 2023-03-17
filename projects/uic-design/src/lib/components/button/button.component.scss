@@ -1,0 +1,25 @@
+@use "sass:color";
+@use "sass:selector";
+@use "common";
+@use "button-variant";
+@use "button-color";
+@use "button-size";
+@use "variables";
+
+:host {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding: common.space(2) common.space(3) common.space(2) common.space(3);
+  font-size: common.font-size(3);
+  border-radius: common.border-radius(4);
+
+  &:hover {
+    background-color: color.adjust(common.color(variables.$default-color), $lightness: 8%);
+  }
+}
+
+@include button-color.color-types;
+@include button-size.size-types;
+@include button-variant.variant-types;

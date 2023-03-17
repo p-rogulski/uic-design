@@ -1,0 +1,14 @@
+@use "common";
+
+:host {
+  ::ng-deep .uic-breadcrumb + .uic-breadcrumb::before {
+    display: inline-block;
+    font-size: common.font-size(3);
+    content: "/\00a0";
+  }
+}
+
+.uic-breadcrumbs-ul {
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,19 @@
+<uic-panel size="wide" noPadding>
+  <uic-box class="uic-slide-panel-box" flow="column" noPadding>
+    <div class="uic-slide-panel-content">
+      <ng-content></ng-content>
+    </div>
+
+    <div *ngIf="slideButtons.length > 0" class="uic-slide-panel-switch">
+      <button
+        uic-button-icon
+        color="secondary"
+        class="uic-slide-panel-button"
+        *ngFor="let slideButton of slideButtons; trackBy: trackById"
+        (click)="switchSlide(slideButton.id)"
+      >
+        <fa-icon [icon]="slideButton.switchIcon" class="uic-slide-panel-icon"></fa-icon>
+      </button>
+    </div>
+  </uic-box>
+</uic-panel>

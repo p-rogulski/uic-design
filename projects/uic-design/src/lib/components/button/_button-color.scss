@@ -1,0 +1,22 @@
+@use "sass:color";
+@use "sass:selector";
+@use "common";
+@use "variables";
+
+@mixin color-types {
+  @each $color in variables.$colors {
+    :host.uic-button-#{$color} {
+      background-color: common.color($color);
+      border: common.border-width(1) solid color.adjust(common.color($color), $lightness: -8%);
+      color: common.color(light);
+
+      &:hover {
+        background-color: color.adjust(common.color($color), $lightness: -5%);
+      }
+
+      &:active {
+        background-color: color.adjust(common.color($color), $lightness: -10%);
+      }
+    }
+  }
+}

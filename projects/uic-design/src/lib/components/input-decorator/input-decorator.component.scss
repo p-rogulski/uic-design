@@ -1,0 +1,16 @@
+@use "common";
+
+:host {
+  display: flex;
+  align-items: baseline;
+}
+
+:host::ng-deep.uic-input {
+  text-indent: common.space(4);
+}
+
+.uic-input-decorator-decoration {
+  position: relative;
+  left: common.space(4);
+  color: common.color(grey-300);
+}

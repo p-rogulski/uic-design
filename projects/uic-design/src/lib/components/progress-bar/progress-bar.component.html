@@ -1,0 +1,7 @@
+<label *ngIf="label" class="uic-progress-label">{{ label }}</label>
+<div class="uic-progress-bar-content">
+  <div class="uic-progress-filling" class="uic-bg-color-{{ bgColor }}" #progress>
+    <span class="uic-progress-value uic-text-color-by-bg-{{ bgColor }}">{{ valueInPercent }}</span>
+  </div>
+</div>
+

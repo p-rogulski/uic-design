@@ -1,0 +1,32 @@
+@use "common";
+
+:host {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 246px;
+  border-radius: common.border-radius(1);
+  margin-bottom: common.space(2);
+  box-sizing: border-box;
+  padding: common.space(2);
+  background-color: common.color("light");
+  color: common.color(grey-400);
+  user-select: none;
+  font-size: common.font-size(2);
+  box-shadow: common.shadow(medium) common.color(grey-100);
+}
+
+.uic-card-title {
+  display: flex;
+  padding: 0;
+  border-radius: inherit;
+  margin: common.space(1);
+  box-sizing: border-box;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 300;
+  font-size: common.font-size(4);
+}

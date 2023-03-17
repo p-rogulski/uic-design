@@ -1,0 +1,9 @@
+@use "common";
+
+:host {
+  display: flex;
+  flex-flow: column;
+  box-shadow: common.shadow(medium) common.color(grey-100);
+  border-radius: common.border-radius(1);
+  background-color: color(light);
+}

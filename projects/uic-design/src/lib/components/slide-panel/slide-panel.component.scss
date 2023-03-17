@@ -1,0 +1,14 @@
+@use "common";
+
+:host {
+  display: block;
+}
+
+.uic-slide-panel-switch {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  padding-top: common.space(3);
+}

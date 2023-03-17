@@ -1,0 +1,10 @@
+@use "common";
+
+:host {
+  display: block;
+  margin-bottom: common.space(1);
+
+  .uic-errors {
+    color: common.color(danger);
+  }
+}

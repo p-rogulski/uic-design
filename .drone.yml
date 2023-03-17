@@ -1,0 +1,20 @@
+kind: pipeline
+name: node8
+
+platform:
+  os: linux
+  arch: arm
+
+steps:
+- name: test
+  image: hypriot/rpi-node:8.1
+  commands:
+  - npm config set proxy null
+  - npm config set https-proxy null
+  - npm config set registry http://10.1.30.183:4873
+  - rm -rf node_modules
+  - npm install
+  - npm test
+
+settings:
+    repo: 10.1.30.183:81:3000/rabbit/uic-design

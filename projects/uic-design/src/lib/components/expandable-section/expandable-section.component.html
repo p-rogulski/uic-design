@@ -1,0 +1,13 @@
+<div
+  class="uic-expandable-section-header"
+  [ngClass]="{ 'uic-bottom-border-radius-off': isOpen }"
+  (click)="toggleExpandableSectionState()"
+>
+  <ng-content select="[headerContent]"></ng-content>
+  <fa-icon class="uic-expandable-section-toggle-icon" [icon]="toggleButtonIcon"></fa-icon>
+</div>
+<div class="uic-expandable-section-drop-down-content" [@openClose]="isOpen ? 'open' : 'closed'">
+  <div class="uic-expandable-section-drop-down-content-wrapper">
+    <ng-content select="[dropdownContent]"></ng-content>
+  </div>
+</div>

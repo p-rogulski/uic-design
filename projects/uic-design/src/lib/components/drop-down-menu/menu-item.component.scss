@@ -1,0 +1,24 @@
+@use "common";
+
+:host {
+  display: block;
+
+  &.uic-menu-item-separator {
+    border-bottom: common.border-width(1) common.color(grey-200) solid;
+  }
+}
+
+.uic-menu-item-content {
+  max-width: 256px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: common.space(2);
+  font-size: common.font-size(3);
+  background-color: common.color(light);
+  cursor: pointer;
+}
+
+.uic-menu-item-content:hover {
+  background-color: common.color(grey-100);
+}

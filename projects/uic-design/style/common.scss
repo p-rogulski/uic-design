@@ -1,0 +1,17 @@
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+@import "./abstracts/functions";
+
+/* custom classes */
+
+/* Generate text color classes */
+@include css-class("uic-text-color", $color-map, "color");
+
+/* Generate border color classes */
+@include css-class("uic-border-color", $color-map, "border-color");
+
+/* Generate bacground color classes */
+@include css-class("uic-bg-color", $color-map, "background-color");
+
+/* Generate text color classes based on background-color */
+@include css-class("uic-text-color-by-bg", bg-text-color-map($color-map), "color");

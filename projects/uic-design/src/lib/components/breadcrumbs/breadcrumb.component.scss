@@ -1,0 +1,34 @@
+@use "common";
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  margin-right: common.space(1);
+}
+
+.uic-breadcrumb-li {
+  cursor: pointer;
+  list-style: none;
+  box-sizing: border-box;
+  color: common.color(grey-500);
+  padding: common.space(1) common.space(2);
+  font-size: common.font-size(3);
+
+  &::before {
+    display: block;
+    content: attr(title);
+    font-weight: 500;
+    height: 0;
+    visibility: hidden;
+  }
+
+  &:hover {
+    font-weight: 500;
+  }
+}
+
+:host.uic-breadcrumb-active .uic-breadcrumb-li {
+  font-weight: 500;
+}

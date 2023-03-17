@@ -1,0 +1,55 @@
+@use "common";
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+}
+
+.uic-step {
+  color: common.color(grey);
+  display: flex;
+  align-items: flex-start;
+  margin-right: common.space(2);
+}
+
+uic-box.uic-stepper-footer {
+  padding: 0;
+}
+
+.uic-step-number {
+  padding: common.space(2);
+  line-height: common.space(1);
+  background-color: common.color(grey-200);
+  border-radius: common.border-radius(half-circle);
+  margin-right: common.space(2);
+  width: common.space(1);
+  text-align: center;
+}
+
+.uic-active-step .uic-step-number {
+  background-color: common.color(secondary);
+  color: common.color(light);
+}
+
+.uic-step-description {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  padding: common.space(1);
+  overflow: hidden;
+  outline: none;
+  box-sizing: content-box;
+  min-width: 50px;
+}
+
+.uic-step-title,
+.uic-step-subtitle {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.uic-active-step .uic-step-title {
+  color: common.color(dark);
+}

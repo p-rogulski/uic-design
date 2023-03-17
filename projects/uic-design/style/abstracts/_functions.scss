@@ -1,0 +1,56 @@
+@use "sass:color";
+@use "sass:map";
+@use "./variables";
+
+@function color($color) {
+  @return map-get(variables.$color-map, $color);
+}
+
+@function z-index($layer) {
+  @return map-get(variables.$z-index-map, $layer);
+}
+
+@function shadow($type) {
+  @return map-get($shadow-map, $type);
+}
+
+@function font-size($size) {
+  @return map-get(variables.$font-size-map, $size);
+}
+
+@function space($size) {
+  @return map-get(variables.$space-map, $size);
+}
+
+@function border-radius($size) {
+  @return map-get(variables.$border-radius-map, $size);
+}
+
+@function border-width($size) {
+  @return map-get(variables.$border-map, $size);
+}
+
+@function line-height($size) {
+  @return map-get(variables.$line-height-map, $size);
+}
+
+/**
+ * @deprecated use bg-text-color-map result as class from common
+ */
+@function bg-text-color($bg-color) {
+  @if lightness(color($bg-color)) > 70% {
+    @return color("grey-500");
+  }
+
+  @return color("light");
+}
+
+@function bg-text-color-map($bg-color-map) {
+  $bg-text-color: ();
+
+  @each $key, $value in $bg-color-map {
+    $bg-text-color: map.set($bg-text-color, #{$key}, bg-text-color($key));
+  }
+
+  @return $bg-text-color;
+}

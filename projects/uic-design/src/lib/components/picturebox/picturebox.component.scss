@@ -1,0 +1,45 @@
+@use "common";
+
+:host {
+  display: flex;
+  overflow: hidden;
+  border-radius: common.border-radius(1);
+  box-shadow: common.shadow(medium) common.color(grey-100);
+
+  &.uic-picturebox-small {
+    max-width: 128px;
+    max-height: 128px;
+    min-height: 64px;
+    font-size: common.font-size(5);
+
+    .uic-picturebox-alt {
+      font-size: 2vw;
+    }
+  }
+
+  &.uic-picturebox-medium {
+    max-width: 256px;
+    max-height: 256px;
+    min-height: 128px;
+    font-size: common.font-size(6);
+  }
+
+  &.uic-picturebox-large {
+    max-width: 512px;
+    max-height: 512px;
+    min-height: 256px;
+    font-size: common.font-size(7);
+  }
+
+  &.uic-picturebox-empty {
+    background-image: url("../../../../static/images/camera-alt.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.uic-picturebox-img {
+  max-width: 100%;
+  object-fit: fill;
+}

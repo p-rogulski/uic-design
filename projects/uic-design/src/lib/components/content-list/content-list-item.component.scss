@@ -1,0 +1,23 @@
+@use "common";
+
+:host {
+  padding: common.space(4);
+  border-width: common.border-width(1) common.border-width(1) 0 common.border-width(1);
+  border-color: common.color(grey-100);
+  border-style: solid;
+  cursor: default;
+  background-color: common.color(light);
+  box-sizing: content-box;
+  color: common.color(grey-500);
+
+  &:first-child {
+    border-top-left-radius: common.border-radius(1);
+    border-top-right-radius: common.border-radius(1);
+  }
+
+  &:last-child {
+    border-bottom-left-radius: common.border-radius(1);
+    border-bottom-right-radius: common.border-radius(1);
+    border-bottom: common.border-width(1) common.color(grey-100) solid;
+  }
+}

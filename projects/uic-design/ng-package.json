@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/uic-design",
+  "assets": ["./style/**/*.scss", "./static/fonts/*"],
+  "inlineStyleLanguage": "scss",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "cssUrl": "inline",
+    "styleIncludePaths": ["./style"]
+  }
+}

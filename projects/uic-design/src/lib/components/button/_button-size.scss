@@ -1,0 +1,19 @@
+@use "variables";
+@use "common";
+
+@mixin size-types {
+  @each $size in variables.$sizes {
+    :host.uic-button-#{$size} {
+      @if $size == small {
+        padding: common.space(1);
+        font-size: common.font-size(2);
+      } @else if $size == large {
+        padding: common.space(2) common.space(3) common.space(2) common.space(3);
+        font-size: common.font-size(4);
+        width: 50%;
+      } @else if $size == wide {
+        width: 100%;
+      }
+    }
+  }
+}

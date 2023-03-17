@@ -1,0 +1,68 @@
+$color-map: (
+  light: #fff,
+  dark: #000,
+  grey-100: #eee,
+  grey-200: #ddd,
+  grey-300: #d4d4d4,
+  grey-400: #7e7e7e,
+  grey-500: #4d4d4d,
+  primary: #008080,
+  secondary: #02b7b7,
+  info: #4ecdff,
+  success: #00c22a,
+  upload: #009077,
+  warning: #ff7c00,
+  danger: #f34343e1,
+  none: transparent,
+);
+$factor: 1.5rem;
+$space-map: (
+  0: 0,
+  1: $factor * 0.25,
+  2: $factor * 0.5,
+  3: $factor,
+  4: $factor * 1.5,
+  5: $factor * 3,
+  6: $factor * 4.5,
+  7: $factor * 6,
+);
+$font-size-map: (
+  1: 0.68rem,
+  2: 0.75rem,
+  3: 1rem,
+  4: 1.2rem,
+  5: $factor,
+  6: $factor * 2,
+  7: $factor * 3,
+  8: $factor * 4,
+);
+$line-height-map: (
+  1: 100%,
+  2: 110%,
+  3: 120%,
+  4: 130%,
+  5: 140%,
+  6: 150%,
+  7: 180%,
+);
+$border-radius-map: (
+  1: 4px,
+  2: 8px,
+  3: 16px,
+  4: 32px,
+  half-circle: 50%,
+  circle: 100%,
+);
+$border-map: (
+  0: 0,
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+);
+$shadow-map: (
+  regular: 0 0 2px 0,
+  medium: 0 0 4px 0,
+  heavy: 0 0 8px 2px,
+);

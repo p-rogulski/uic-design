@@ -1,0 +1,6 @@
+@use "common";
+
+:host(.uic-row) {
+  display: flex;
+  flex-wrap: wrap;
+}

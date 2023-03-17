@@ -1,0 +1,30 @@
+@use "common";
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: common.space(2);
+  background-color: common.color(light);
+  box-shadow: common.shadow(medium) common.color(grey-100);
+  border-radius: common.border-radius(1);
+  width: 100%;
+  max-width: 354px;
+
+  &.uic-panel-wide,
+  .uic-panel-half {
+    max-width: none;
+  }
+
+  &.uic-panel-wide {
+    width: 100%;
+  }
+
+  &.uic-panel-half {
+    max-width: 50%;
+  }
+}
+
+.uic-panel-wrapper {
+  padding: 0;
+}

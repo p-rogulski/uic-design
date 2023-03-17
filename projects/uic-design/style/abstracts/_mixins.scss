@@ -1,0 +1,45 @@
+/* Media breakpoints */
+
+/* Extra small devices (portrait tablets and large phones, up to 575px) */
+@mixin extra-small-breakpoint {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@mixin small-breakpoint {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@mixin medium-breakpoint {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@mixin large-breakpoint {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@mixin extra-large-breakpoint {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+/* CSS class generator */
+@mixin css-class($prefix, $styleMap, $property, $unit: null) {
+  @each $key, $value in $styleMap {
+    :host.#{$prefix}-#{$key},.#{$prefix}-#{$key} {
+      #{$property}: #{$value}$unit;
+    }
+  }
+}

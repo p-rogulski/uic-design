@@ -1,0 +1,7 @@
+:host {
+  display: none;
+
+  &.uic-slide-active {
+    display: block;
+  }
+}

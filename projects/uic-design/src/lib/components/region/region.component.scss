@@ -1,0 +1,9 @@
+@use "common";
+
+:host {
+  font-weight: 500;
+  font-size: common.font-size(4);
+  color: common.color(grey-500);
+  padding: 0 common.space(2);
+  border-left: 5px common.color(grey-500) solid;
+}

@@ -1,0 +1,35 @@
+@use "sass:color";
+@use "common";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  box-shadow: common.shadow(medium) common.color(grey-100);
+
+  &.uic-avatar-small {
+    width: common.space(4);
+    height: common.space(4);
+    font-size: common.font-size(5);
+  }
+
+  &.uic-avatar-medium {
+    width: common.space(5);
+    height: common.space(5);
+    font-size: common.font-size(6);
+  }
+
+  &.uic-avatar-large {
+    width: common.space(7);
+    height: common.space(7);
+    font-size: common.font-size(8);
+  }
+}
+
+.uic-avatar-img {
+  max-width: 100%;
+  border-radius: 100%;
+  object-fit: fill;
+  height: 100%;
+}

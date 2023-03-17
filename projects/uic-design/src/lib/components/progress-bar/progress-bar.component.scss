@@ -1,0 +1,35 @@
+@use "common";
+
+:host {
+  display: block;
+}
+
+:host,
+.uic-progress-filling,
+.uic-progress-bar-content {
+  height: common.space(3);
+}
+
+.uic-progress-bar-content {
+  position: relative;
+  text-align: center;
+  border: common.border-width(1) common.color(grey-200) solid;
+}
+
+.uic-progress-filling,
+.uic-progress-bar-content {
+  border-radius: common.border-radius(4);
+}
+
+.uic-progress-label {
+  margin-left: common.space(2);
+}
+
+.uic-progress-value {
+  position: absolute;
+  right: common.space(2);
+}
+
+.uic-progress-filling {
+  position: relative;
+}

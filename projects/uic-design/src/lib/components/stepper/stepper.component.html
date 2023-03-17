@@ -1,0 +1,47 @@
+<uic-box class="uic-stepper-wrapper" flow="column">
+  <uic-box
+    *ngIf="showActiveStep"
+    class="uci-active-steps"
+    justifyContent="space-between"
+  >
+    <ng-container *ngFor="let step of steps; index as i">
+      <div
+        class="uic-step"
+        *uicLet="i + 1 as stepNumber"
+        [ngClass]="{ 'uic-active-step': stepNumber === activeStep }"
+      >
+        <span class="uic-step-number">{{ stepNumber }}</span>
+        <span class="uic-step-description">
+          <span class="uic-step-title"> {{ step.label }} </span>
+          <span class="uic-step-subtitle"> {{ step.description }} </span>
+        </span>
+      </div>
+    </ng-container>
+  </uic-box>
+
+  <div class="uic-stepper-content">
+    <router-outlet
+      *ngIf="isIncludesStepsWithRoute(steps); else componentOutlet"
+    ></router-outlet>
+  </div>
+
+  <uic-box class="uic-stepper-footer" justifyContent="space-between">
+    <button
+      [style.visibility]="prevButtonVisibility"
+      uic-button-outline
+      color="secondary"
+      (click)="goToPrevStep()"
+    >
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+      {{ prevButtonLabel }}
+    </button>
+    <button uic-button color="primary" (click)="goToNextStep()">
+      {{ isLastStep ? finishButtonLabel : nextButtonLabel }}
+      <fa-icon *ngIf="!isLastStep" [icon]="faArrowRight"></fa-icon>
+    </button>
+  </uic-box>
+</uic-box>
+
+<ng-template #componentOutlet>
+  <ng-container *ngComponentOutlet="contentComponent"></ng-container>
+</ng-template>

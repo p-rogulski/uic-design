@@ -1,0 +1,95 @@
+@use "sass:color";
+@use "sass:selector";
+@use "common";
+@use "button-color";
+@use "variables";
+
+@mixin button-outline($color) {
+  background-color: transparent;
+  color: color.adjust($color, $lightness: -20%);
+
+  &:hover {
+    color: color.adjust($color, $lightness: -30%);
+    background-color: color.change($color, $alpha: 0.05);
+  }
+}
+
+@mixin button-link($color) {
+  background-color: transparent;
+  padding: common.space(1);
+  padding: auto;
+  border: none;
+  color: color.adjust($color, $lightness: -40%);
+
+  &:hover {
+    text-decoration: underline;
+    color: color.adjust($color, $lightness: -60%);
+  }
+
+  &:focus {
+    box-shadow: none;
+    color: color.adjust($color, $lightness: -60%);
+    text-decoration: underline;
+  }
+}
+
+@mixin button-text($color) {
+  background-color: transparent;
+  padding: common.space(1);
+  border: none;
+  color: color.adjust($color, $lightness: -40%);
+
+  &:hover {
+    color: color.adjust($color, $lightness: -60%);
+  }
+
+  &:focus {
+    box-shadow: none;
+    color: color.adjust($color, $lightness: -60%);
+  }
+}
+
+@mixin button-icon($color) {
+  @include button-outline($color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  min-width: 42px;
+  border-radius: common.border-radius(4);
+  padding: common.space(1);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 100%;
+  }
+}
+
+@mixin variant-in-color($variant, $color) {
+  @if $variant == outline {
+    @include button-outline(common.color($color));
+  } @else if $variant == link {
+    @include button-link(common.color($color));
+  } @else if $variant == text {
+    @include button-text(common.color($color));
+  } @else if $variant == icon {
+    @include button-icon(common.color($color));
+  }
+}
+
+@mixin variant-types {
+  @each $variant in variables.$variants {
+    @each $color in variables.$colors {
+      :host.uic-button-#{$variant} {
+        @include variant-in-color($variant, variables.$default-color);
+      }
+
+      :host.uic-button-#{$variant}.uic-button-#{$color} {
+        @include variant-in-color($variant, $color);
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "sass:color";
+@use "sass:selector";
+@use "common";
+
+:host {
+  display: block;
+  border-radius: common.border-radius(2);
+  padding: common.space(1) common.space(1) common.space(2) common.space(3);
+  box-shadow: common.shadow(medium) common.color(grey-100);
+
+  &.uic-banner-info {
+    background-color: common.color(primary);
+  }
+
+  &.uic-banner-success {
+    background-color: common.color(success);
+  }
+
+  &.uic-banner-warning {
+    background-color: common.color(warning);
+  }
+
+  &.uic-banner-error {
+    background-color: common.color(danger);
+  }
+}
+
+.uic-banner-header {
+  display: flex;
+  justify-content: baseline;
+  text-align: flex-end;
+  margin: 0;
+  border-radius: common.border-radius(2) common.border-radius(2) 0 0;
+}
+
+.uic-banner-title {
+  position: relative;
+  top: common.space(1);
+  text-align: left;
+  font-size: common.font-size(4);
+  font-weight: 400;
+}
+
+.uic-banner-title-text {
+  margin-left: common.space(2);
+}
+
+.uic-banner-content {
+  text-align: left;
+  font-size: common.font-size(3);
+}
+
+.uic-banner-header,
+.uic-banner-content {
+  color: common.color(light);
+}

@@ -1,0 +1,71 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "import"],
+  "rules": {
+    "no-console": "error",
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "indent": ["error", 2],
+    "no-multi-spaces": ["error"],
+    "node/no-missing-require": "off",
+    "node/no-extraneous-import": "off",
+    "no-non-null-assertion":"on",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "groups": ["builtin", "external", "internal", "parent", "object", "type", "index", "sibling"],
+        "pathGroups": [
+          {
+            "pattern": "@angular/**",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "uic-design/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "mock/data",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["@angular/**"]
+      }
+    ],
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".ts", ".js"],
+        "map": [
+          ["mock/data", "./mock/data"],
+          ["uic-design","./projects/uic-design/src"],
+          ["uic-design/core", "./projects/uic-design/src/lib/core"],
+          ["uic-design/components", "./projects/uic-design/src/lib/components"],
+          ["uic-design/services", "./projects/uic-design/src/lib/services"],
+          ["uic-design/directives", "./projects/uic-design/src/lib/directives"]
+        ]
+      }
+    }
+  }
+}

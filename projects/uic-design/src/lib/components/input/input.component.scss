@@ -1,0 +1,30 @@
+@use "sass:color";
+@use "sass:selector";
+@use "common";
+
+:host {
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  text-indent: common.space(1);
+  padding: common.space(2);
+  font-size: common.font-size(4);
+  font-weight: 100;
+  color: common.color(grey-500);
+  border: none;
+  border-bottom: common.border-width(1) common.color(primary) dashed;
+  line-height: common.line-height(4);
+
+  &:focus {
+    background-color: color.adjust(common.color(secondary), $lightness: 60%);
+    border-bottom-color: color.adjust(common.color(secondary));
+  }
+
+  &::placeholder {
+    color: common.color(secondary);
+  }
+
+  &.ng-invalid.ng-touched {
+    border-color: common.color(danger);
+  }
+}

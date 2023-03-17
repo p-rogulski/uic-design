@@ -1,0 +1,12 @@
+@use "sass:color";
+@use "sass:selector";
+@use "common";
+
+:host {
+  width: 100%;
+  opacity: 0.7;
+  border-radius: common.border-radius(1);
+  margin-top: common.space(3);
+  margin-bottom: common.space(3);
+  border-top: common.border-width(1) color.change(common.color(dark), $alpha: 0.2) solid;
+}

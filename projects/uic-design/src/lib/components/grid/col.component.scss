@@ -1,0 +1,39 @@
+@use "common";
+
+$columns: 12;
+
+@mixin col-media-size($wide) {
+  @for $i from 1 through $columns {
+    &-#{$wide}-#{$i} {
+      width: calc($i / $columns * 100%);
+    }
+  }
+}
+
+:host.uic-col {
+  display: flex;
+  flex-flow: wrap;
+  padding: common.space(2);
+  box-sizing: border-box;
+  max-width: 100%;
+
+  @include common.extra-small-breakpoint {
+    @include col-media-size("xs");
+  }
+
+  @include common.small-breakpoint {
+    @include col-media-size("sm");
+  }
+
+  @include common.medium-breakpoint {
+    @include col-media-size("md");
+  }
+
+  @include common.large-breakpoint {
+    @include col-media-size("lg");
+  }
+
+  @include common.extra-large-breakpoint {
+    @include col-media-size("xl");
+  }
+}

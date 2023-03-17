@@ -1,0 +1,54 @@
+@use "common";
+
+$bg-colors: "primary", "light", "none";
+
+:host {
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+  left: 0;
+  padding: common.space(2);
+  border-radius: common.border-radius(2);
+  box-shadow: common.shadow(medium) common.color(grey-100);
+  background-color: common.color(light);
+
+  &.uic-sidebar-right {
+    right: 0;
+    left: auto;
+
+    .uic-sidebar-toggle-button {
+      float: left;
+    }
+  }
+
+  @each $bgColor in $bg-colors {
+    &.uic-sidebar-#{$bgColor} {
+      background-color: common.color($bgColor);
+      color: common.bg-text-color($bgColor);
+
+      @if $bgColor == none {
+        box-shadow: none;
+      }
+
+      .uic-sidebar-toggle-icon {
+        color: common.bg-text-color($bgColor);
+      }
+    }
+  }
+}
+
+.uic-sidebar-header {
+  position: relative;
+  margin-bottom: common.space(4);
+}
+
+.uic-sidebar-toggle-button {
+  position: absolute;
+  right: 0;
+}
+
+.uic-sidebar-content {
+  overflow: hidden;
+  padding: common.space(1) 0 common.space(1);
+}

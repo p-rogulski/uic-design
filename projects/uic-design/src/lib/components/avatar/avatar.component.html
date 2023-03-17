@@ -1,0 +1,5 @@
+<img *ngIf="imgSrc; else textTmpl" [src]="imgSrc" class="uic-avatar-img" />
+
+<ng-template #textTmpl>
+  <p class="uic-avatar-text">{{ altText }}</p>
+</ng-template>
