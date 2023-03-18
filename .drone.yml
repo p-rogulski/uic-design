@@ -11,10 +11,10 @@ steps:
   commands:
   - npm config set proxy null
   - npm config set https-proxy null
-  - npm config set registry http://10.1.30.183:4873
+  - npm config set registry <registry url>
   - rm -rf node_modules
   - npm install
   - npm test
 
 settings:
-    repo: 10.1.30.183:81:3000/rabbit/uic-design
+    repo: <repo url>
